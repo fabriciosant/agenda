@@ -7,14 +7,21 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import {
+  SidebarHeader,
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-
 export default function Page() {
+  const currentDate = new Date();
+  const formattedDate = new Intl.DateTimeFormat("pt-br", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(currentDate);
   return (
     <SidebarProvider>
+      <SidebarHeader />
       <AppSidebar />
       <SidebarInset>
         <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -26,7 +33,7 @@ export default function Page() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbPage>October 2024</BreadcrumbPage>
+                <BreadcrumbPage>{formattedDate}</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
