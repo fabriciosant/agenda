@@ -120,3 +120,53 @@
     @apply bg-background text-foreground;
   }
 }
+@media (max-width: 768px) {
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.2rem !important;
+  }
+
+  .fc .fc-button {
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .fc-responsive .fc-view-harness {
+    min-width: 300px;
+  }
+
+  .fc-header-toolbar {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* Ensure calendar fits within container */
+.fc {
+  width: 100%;
+  max-width: 100%;
+}
+
+.fc-view-harness {
+  width: 100% !important;
+}
+
+/* Improve touch interactions on mobile */
+@media (max-width: 768px) {
+  .fc td,
+  .fc th {
+    padding: 1px !important;
+  }
+
+  .fc-daygrid-day-number,
+  .fc-col-header-cell-cushion {
+    font-size: 0.8rem;
+  }
+
+  .fc-event {
+    font-size: 0.7rem;
+  }
+}
